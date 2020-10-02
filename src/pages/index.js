@@ -1,11 +1,14 @@
 import React from 'react';
+import NavBar from '../components/NavBar/NavBar';
+import Main from '../components/Main/Main';
 
 const HomePage = () => {
-  return (
-    <div>
-      <h1 className="leading-4">Hello Roman</h1>
-    </div>
-  );
+    return (
+        <div className="bg-gray-800 h-screen bg">
+            <NavBar />
+            <Main />
+        </div>
+    );
 };
 
 export default HomePage;
