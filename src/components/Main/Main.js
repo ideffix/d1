@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import Button from '../Button/Button';
 
 const query = graphql`
     query BQuery {
@@ -20,6 +21,9 @@ const Main = () => {
             <div className="pl-64">
                 <div className="text-7xl font-bold tracking-wider">D1 Detailing</div>
                 <div className="text-4xl italic">Z pasją do samochodów</div>
+                <div className="flex justify-center mt-4">
+                    <Button value="Sprawdź naszą oferte!" />
+                </div>
             </div>
             <img className="absolute bottom-0 right-0" src={data.file.childImageSharp.fluid.src} alt="car" />
         </main>
