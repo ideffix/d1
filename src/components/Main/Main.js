@@ -39,7 +39,7 @@ const Main = () => {
     const data = useStaticQuery(query);
     return (
         <main className="h-screen flex justify-center items-start text-white flex-col">
-            <div className="pl-64">
+            <div className="pl-64 h-full flex flex-col justify-between mt-1/5 mb-8">
                 <div>
                     <div className="text-7xl font-bold tracking-wider">D1 Detailing</div>
                     <TextWheel elements={ALL_WHEEL_ELEMENTS} timeout={2000} />
@@ -47,7 +47,7 @@ const Main = () => {
                         <Button value="Sprawdź naszą oferte!" />
                     </div>
                 </div>
-                <Socials className="flex flex-col justify-center text-center bottom-0 relative" />
+                <Socials className="flex flex-col justify-center text-center" />
             </div>
             <img className="absolute bottom-0 right-0" src={data.file.childImageSharp.fluid.src} alt="car" />
         </main>
@@ -85,27 +85,29 @@ const TextWheel = ({ elements, timeout }) => {
 const SOCIALS = [
     {
         icon: faFacebookSquare,
-        href: 'http://facebook.com',
-        color: 'blue',
+        href: 'https://www.facebook.com/D1DetailOne',
+        color: '#3b5998',
+    },
+    {
+        icon: faYoutubeSquare,
+        href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        color: '#c4302b',
     },
     {
         icon: faInstagramSquare,
         href: 'http://instagram.com',
-        color: 'green',
-    },
-    {
-        icon: faYoutubeSquare,
-        href: 'http://youtube.com',
-        color: 'red',
+        color: '#3f729b',
     },
 ];
 
 const Socials = (props) => (
     <div {...props}>
-        <h3>Wpadnij do nas!</h3>
+        <h3 className="text-3xl">Wpadnij do nas!</h3>
         <div>
-            {SOCIALS.map((s) => (
-                <FontAwesomeIcon key={s.href} target="blank" size="3x" as {...s} />
+            {SOCIALS.map(({ href, ...s }) => (
+                <a target="blank" href={href} key={href}>
+                    <FontAwesomeIcon target="blank" size="3x" className="m-2 scale-120 cursor-pointer" {...s} />
+                </a>
             ))}
         </div>
     </div>
