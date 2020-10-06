@@ -26,7 +26,7 @@ const NavBar = () => {
             <img src={data.file.publicURL} alt="logo" width={200} />
             <div className="flex">
                 {MENU_ITEMS.map((item) => (
-                    <MenuItem {...item} />
+                    <MenuItem key={item.href} {...item} />
                 ))}
             </div>
         </nav>
