@@ -15,6 +15,10 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "classnames": "^2.2.6",
     "eslint-plugin-prettier": "^3.1.4",
     "gatsby": "^2.24.61",
